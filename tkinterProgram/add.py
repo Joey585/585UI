@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import webbrowser
 import datetime
+import os
 now = datetime.datetime.now()
 
 
@@ -11,6 +12,10 @@ def newWindow():
         
     def quitGui():
         gui2.destroy()
+
+
+    def pcspecs():
+        os.system('start /wait cmd /k systeminfo')
 
     def openWebsiteWindow():
 
@@ -56,11 +61,18 @@ def newWindow():
         bg='#22e6df',
         command=openWebsiteWindow
     )
+    cmdButton = Button(
+        text='Get PC Specs',
+        fg='black',
+        bg='#33c438',
+        command=pcspecs
+    )
 
     # Packing
     intro.pack(side='top')
     time.pack(side='top')
     websiteButton.pack(pady=20)
+    cmdButton.pack(pady=10)
     quit.pack(side='bottom', pady=15)
 
 
