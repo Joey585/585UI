@@ -22,7 +22,7 @@ def newWindow():
         
         websiteWindow = Toplevel(gui2)
         websiteWindow.title('Website Open')
-        websiteWindow.geometry('200x200')
+        websiteWindow.geometry('200x150')
         intro1 = Label(websiteWindow,
         text='Enter Website').pack()
         website = Entry(websiteWindow)
@@ -33,7 +33,8 @@ def newWindow():
             fg='black',
             bg='green',
             command=websiteOpener
-        ).pack()
+        ).pack(pady=15)
+        websiteWindow.iconbitmap(r'info.ico')
 
 
 
@@ -52,15 +53,15 @@ def newWindow():
     websiteButton = Button(
         text='Open Website',
         fg='black',
-        bg='blue',
+        bg='#22e6df',
         command=openWebsiteWindow
     )
 
     # Packing
     intro.pack(side='top')
     time.pack(side='top')
-    websiteButton.pack()
-    quit.pack(side='bottom')
+    websiteButton.pack(pady=20)
+    quit.pack(side='bottom', pady=15)
 
 
     gui2.geometry('500x500')
