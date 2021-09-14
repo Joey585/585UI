@@ -88,7 +88,7 @@ def newWindow():
 
     )
     last_restart = Button(
-        text='Find the last restart',
+        text='Work Station Statistics',
         fg='black',
         bg='#158515',
         command=show_lastRestart
