@@ -22,7 +22,7 @@ def newWindow():
         os.system('start /wait cmd /k taskmgr')
 
     def show_lastRestart():
-        os.system('start /wait cmd /k net statistics workstations')
+        os.system('start /wait cmd /k net statistics workstation')
 
     def openWebsiteWindow():
 
