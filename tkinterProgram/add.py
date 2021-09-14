@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from tmkill import tmkill_window
 import webbrowser
 import datetime
 import os
@@ -16,6 +17,12 @@ def newWindow():
 
     def pcspecs():
         os.system('start /wait cmd /k systeminfo')
+
+    def tmshow():
+        os.system('start /wait cmd /k taskmgr')
+
+    def show_lastRestart():
+        os.system('start /wait cmd /k net statistics workstations')
 
     def openWebsiteWindow():
 
@@ -67,17 +74,40 @@ def newWindow():
         bg='#33c438',
         command=pcspecs
     )
+    tm_button = Button(
+        text='View TM',
+        fg='black',
+        bg='#108fb5',
+        command=tmshow
+    )
+    kill_tmtask = Button(
+        text='Kill a TM task',
+        fg='black',
+        bg='#690217',
+        command=tmkill_window
+
+    )
+    last_restart = Button(
+        text='Find the last restart',
+        fg='black',
+        bg='#158515',
+        command=show_lastRestart
+    )
 
     # Packing
     intro.pack(side='top')
     time.pack(side='top')
-    websiteButton.pack(pady=20)
+    websiteButton.pack(pady=10)
     cmdButton.pack(pady=10)
+    tm_button.pack(pady=10)
+    kill_tmtask.pack(pady=10)
+    last_restart.pack(pady=10)
     quit.pack(side='bottom', pady=15)
 
 
     gui2.geometry('500x500')
-    gui2.iconbitmap(r'info.ico')
+    ## gui2.iconbitmap(r'info.ico')
+    ## You can make your own ico file!
     gui2.mainloop()
 
 
