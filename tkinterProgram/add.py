@@ -19,7 +19,7 @@ def newWindow():
         os.system('start /wait cmd /k systeminfo')
 
     def tmshow():
-        os.system('start /wait cmd /k taskmgr')
+        os.system('start /wait cmd /k tasklist')
 
     def show_lastRestart():
         os.system('start /wait cmd /k net statistics workstation')
